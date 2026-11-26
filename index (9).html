@@ -1,0 +1,696 @@
+<meta charset="utf-8">
+<title>Cloud Heaven Igatpuri</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><mask id='f'><rect width='64' height='64' fill='%23fff'/><rect x='-2' y='25.4' width='68' height='4' rx='2' fill='%23000'/><rect x='-2' y='33.4' width='68' height='2.6' rx='1.3' fill='%23000'/></mask></defs><g mask='url(%23f)' fill='%23141A17'><path d='M9 46 L18 29 L18 13 L38 13 L54 46 Z'/></g><rect x='6' y='49.6' width='52' height='2.4' rx='1.2' fill='%23141A17'/></svg>">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: a survey sheet — hairline plot boundaries, figures annotated like a site plan, one measured column */
+:root {
+  --paper: #EEF0EC;
+  --paper-2: #E4E8E2;
+  --paper-3: #DADFD8;
+  --ink: #141A17;
+  --ink-2: #566056;
+  --accent: #A8502A;
+  --accent-soft: #F0E0D6;
+  --field: #2F5D42;
+  --line: #C6CCC4;
+  --line-soft: #D8DDD6;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Spectral", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121613;
+    --paper-2: #1A1F1B;
+    --paper-3: #232924;
+    --ink: #E9ECE7;
+    --ink-2: #99A398;
+    --accent: #DC8155;
+    --accent-soft: #35231B;
+    --field: #78B18D;
+    --line: #333A34;
+    --line-soft: #272D28;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121613;
+  --paper-2: #1A1F1B;
+  --paper-3: #232924;
+  --ink: #E9ECE7;
+  --ink-2: #99A398;
+  --accent: #DC8155;
+  --accent-soft: #35231B;
+  --field: #78B18D;
+  --line: #333A34;
+  --line-soft: #272D28;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+section { border-top: 1px solid var(--line); }
+section .wrap { padding-block: 3.25rem; }
+
+h1, h2, h3, .label, .num, button, input, select, label {
+  font-family: var(--display);
+}
+h1, h2, h3 { text-wrap: balance; margin: 0; letter-spacing: -0.02em; }
+p { margin: 0 0 1rem; max-width: 34em; }
+p:last-child { margin-bottom: 0; }
+
+.label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0 0 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ---------- hero ---------- */
+.hero .wrap { padding-block: 2.5rem 3.25rem; }
+.brand { display: flex; align-items: center; gap: 0.625rem; margin-bottom: 2rem; color: var(--ink); }
+.brand svg { width: 36px; height: 36px; flex: none; }
+.brandname { font-family: var(--display); font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.17em; text-transform: uppercase; }
+.foot-brand { display: flex; align-items: center; gap: 0.5rem; color: var(--ink); margin-bottom: 0.375rem; }
+.foot-brand svg { width: 22px; height: 22px; flex: none; }
+.eyebrow {
+  font-family: var(--display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1.5rem;
+}
+h1 {
+  font-size: clamp(2.5rem, 8.5vw, 4.75rem);
+  font-weight: 800;
+  line-height: 0.98;
+  margin-bottom: 1.5rem;
+}
+h1 .rate { color: var(--accent); display: block; }
+.standfirst {
+  font-size: clamp(1.125rem, 2.6vw, 1.3125rem);
+  max-width: 30em;
+  margin-bottom: 2rem;
+}
+.gate {
+  border-left: 3px solid var(--accent);
+  padding: 0.125rem 0 0.125rem 1rem;
+  font-weight: 500;
+  margin-bottom: 2.25rem;
+  max-width: 30em;
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.btn {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 0.8125rem 1.375rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: opacity 0.15s ease;
+}
+.btn:hover { opacity: 0.84; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--ink); opacity: 1; }
+.btn.accent { background: var(--accent); border-color: var(--accent); color: #fff; }
+:where(a, button, input, select):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.phone-inline {
+  font-family: var(--display);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- facts strip ---------- */
+.facts { background: var(--paper-2); }
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.fact { background: var(--paper-2); padding: 1.25rem 1.125rem; min-width: 0; }
+.fact dt {
+  font-family: var(--display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: 0.5rem;
+}
+.fact dd {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.fact dd .sub {
+  display: block;
+  font-family: var(--body);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--ink-2);
+  letter-spacing: 0;
+  margin-top: 0.1875rem;
+}
+.tick { color: var(--field); }
+
+/* ---------- film ---------- */
+.film { background: var(--paper-2); }
+.film-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-items: center;
+}
+@media (min-width: 46rem) {
+  .film-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+}
+.clip { margin: 0; width: 100%; max-width: 21rem; min-width: 0; }
+.clip video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  background: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+.clip figcaption { padding-top: 0.9375rem; }
+.clip-title {
+  font-family: var(--display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 0.4375rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.625rem;
+}
+.clip-title .run {
+  font-weight: 600;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+.clip-note { font-size: 0.9375rem; color: var(--ink-2); margin: 0; max-width: none; }
+
+/* ---------- calculator ---------- */
+.calc-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+@media (min-width: 46rem) { .calc-grid { grid-template-columns: 1.1fr 1fr; gap: 3rem; } }
+.calc-panel {
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  padding: 1.5rem;
+  min-width: 0;
+}
+.slider-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.slider-head .cap {
+  font-family: var(--display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+#sizeOut {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+#sizeOut span { font-size: 0.875rem; font-weight: 600; color: var(--ink-2); }
+input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 0.375rem; }
+.range-ends {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--display);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.readout { margin-top: 1.5rem; border-top: 1px solid var(--line); padding-top: 1.25rem; }
+.readout-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.4375rem 0;
+  font-size: 0.9375rem;
+}
+.readout-row dt { color: var(--ink-2); }
+.readout-row dd {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.total { border-top: 1px solid var(--line); margin-top: 0.625rem; padding-top: 1rem; }
+.total dt { font-family: var(--display); font-weight: 700; font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); }
+#priceOut {
+  font-family: var(--display);
+  font-size: clamp(1.875rem, 6vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.05;
+}
+
+/* ---------- distances ---------- */
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; }
+caption { text-align: left; color: var(--ink-2); font-size: 0.875rem; padding-bottom: 0.75rem; }
+th, td { text-align: left; padding: 0.6875rem 1rem 0.6875rem 0; border-bottom: 1px solid var(--line-soft); }
+th {
+  font-family: var(--display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  border-bottom-color: var(--line);
+}
+td.dist {
+  font-family: var(--display);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- form ---------- */
+.enquire { background: var(--paper-2); }
+form { display: grid; gap: 1.25rem; max-width: 36rem; }
+.field { display: grid; gap: 0.4375rem; min-width: 0; }
+.field > label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+input[type="text"], input[type="tel"], select {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.6875rem 0.8125rem;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 2px;
+  width: 100%;
+}
+input:focus, select:focus { border-color: var(--accent); }
+.choices { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.choices input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.choices label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  cursor: pointer;
+  background: var(--paper);
+}
+.choices input:checked + label { background: var(--accent); border-color: var(--accent); color: #fff; }
+.choices input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 2px; }
+.note { font-size: 0.875rem; color: var(--ink-2); }
+
+#result { border: 1px solid var(--accent); background: var(--accent-soft); padding: 1.25rem; margin-top: 0.5rem; }
+#result h3 { font-size: 1.0625rem; font-weight: 700; margin-bottom: 0.625rem; }
+#msgBox {
+  font-family: var(--body);
+  font-size: 0.9375rem;
+  white-space: pre-wrap;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 0.875rem;
+  margin: 0 0 1rem;
+  max-width: none;
+}
+#result .actions { gap: 0.625rem; }
+
+footer { border-top: 1px solid var(--line); }
+footer .wrap { padding-block: 2.25rem 2.75rem; }
+.foot-row { display: flex; flex-wrap: wrap; gap: 1.25rem 2.5rem; align-items: baseline; }
+.foot-num { font-family: var(--display); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.fine { font-size: 0.8125rem; color: var(--ink-2); margin-top: 1.5rem; max-width: 44em; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" role="img" aria-label="Cloud Heaven"><defs><mask id="mk1"><rect width="64" height="64" fill="#fff"/><rect x="-2" y="25.4" width="68" height="4" rx="2" fill="#000"/><rect x="-2" y="33.4" width="68" height="2.6" rx="1.3" fill="#000"/></mask></defs><g mask="url(#mk1)" fill="currentColor"><path d="M9 46 L18 29 L18 13 L38 13 L54 46 Z"/></g><rect x="6" y="49.6" width="52" height="2.4" rx="1.2" fill="currentColor"/></svg>
+      <span class="brandname">Cloud Heaven</span>
+    </div>
+    <p class="eyebrow">Igatpuri &middot; Nashik district &middot; Pre-launch</p>
+    <h1>25 acres in the Sahyadris at <span class="rate">&#8377;1,000 / sq ft</span></h1>
+    <p class="standfirst">NA-approved plots from 2,000 to 10,000 sq ft, with electricity and water already connected and a clear title. Comparable plots in the Igatpuri&ndash;Ghoti belt ask &#8377;2,000 to &#8377;2,400 a square foot.</p>
+    <p class="gate">Entry ticket is &#8377;20 lakh. If that is outside your range, this one is not for you.</p>
+    <div class="actions">
+      <a class="btn accent" href="https://wa.me/917385588253?text=Hi%2C%20I%27d%20like%20details%20on%20Cloud%20Heaven%2C%20Igatpuri." target="_blank" rel="noopener">Enquire on WhatsApp</a>
+      <a class="btn ghost" href="#enquire">Book a site visit</a>
+      <span class="note">or call <span class="phone-inline">73855 88253</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="facts">
+  <div class="wrap">
+    <p class="label">What you are buying</p>
+    <dl class="facts-grid">
+      <div class="fact">
+        <dt>Approval</dt>
+        <dd><span class="tick">NA approved</span><span class="sub">Non-agricultural, converted before sale</span></dd>
+      </div>
+      <div class="fact">
+        <dt>Title</dt>
+        <dd><span class="tick">Clear title</span><span class="sub">Verify the 7/12 extract on your visit</span></dd>
+      </div>
+      <div class="fact">
+        <dt>Infrastructure</dt>
+        <dd><span class="tick">Power &amp; water in</span><span class="sub">Connections already laid, not promised</span></dd>
+      </div>
+      <div class="fact">
+        <dt>Layout</dt>
+        <dd>25 acres<span class="sub">Internal roads cut, plots demarcated</span></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="film">
+  <div class="wrap">
+    <p class="label">See it before you come</p>
+    <div class="film-grid">
+      <figure class="clip">
+        <video controls playsinline preload="none" poster="poster-site.jpg" width="720" height="1280">
+          <source src="cloud-heaven-site.mp4" type="video/mp4">
+          Your browser cannot play this video. Call 73855 88253 and we will send it on WhatsApp.
+        </video>
+        <figcaption>
+          <p class="clip-title">The area, from the air <span class="run">1:40</span></p>
+          <p class="clip-note">The valley in full monsoon, the villages around the site and how the roads run through them. Narrated in Marathi.</p>
+        </figcaption>
+      </figure>
+      <figure class="clip">
+        <video controls playsinline preload="none" poster="poster-walkthrough.jpg" width="720" height="1280">
+          <source src="cloud-heaven-walkthrough.mp4" type="video/mp4">
+          Your browser cannot play this video. Call 73855 88253 and we will send it on WhatsApp.
+        </video>
+        <figcaption>
+          <p class="clip-title">The layout and the approach <span class="run">0:59</span></p>
+          <p class="clip-note">The plots from above with the internal roads already cut, the expressway run, and the gate at the entrance. In English.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="label">Work out your plot</p>
+    <div class="calc-grid">
+      <div>
+        <h2 style="font-size:1.75rem;font-weight:700;margin-bottom:1rem">Pick a size, see the number.</h2>
+        <p>Every plot is priced the same way: area &times; &#8377;1,000. Nothing is quoted on request and nothing changes at the table.</p>
+        <p>Stamp duty, registration and development charges sit on top. Ask for the full cost sheet before you commit to anything &mdash; on this project or any other.</p>
+      </div>
+      <div class="calc-panel">
+        <div class="slider-head">
+          <span class="cap">Plot area</span>
+          <span id="sizeOut">4,000 <span>sq ft</span></span>
+        </div>
+        <input type="range" id="sizeRange" min="2000" max="10000" step="500" value="4000" aria-label="Plot area in square feet">
+        <div class="range-ends"><span>2,000</span><span>10,000</span></div>
+        <dl class="readout">
+          <div class="readout-row"><dt>In gunthas</dt><dd id="gunthaOut">3.67</dd></div>
+          <div class="readout-row"><dt>Rate</dt><dd>&#8377;1,000 / sq ft</dd></div>
+          <div class="readout-row total"><dt>Plot price</dt><dd id="priceOut">&#8377;40 L</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="label">Where it sits</p>
+    <div class="table-scroll">
+      <table>
+        <caption>Distances from the site, Igatpuri taluka.</caption>
+        <thead>
+          <tr><th scope="col">From the plot</th><th scope="col">Distance</th><th scope="col">Why it matters</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Samruddhi Expressway</td><td class="dist">10&ndash;15 min</td><td>Nagpur&ndash;Mumbai corridor access</td></tr>
+          <tr><td>Ghoti&ndash;Sinnar highway</td><td class="dist">2 km</td><td>Local connectivity</td></tr>
+          <tr><td>Mumbai&ndash;Nashik highway (NH&nbsp;3)</td><td class="dist">4 km</td><td>The everyday road in and out</td></tr>
+          <tr><td>Nashik</td><td class="dist">35 km</td><td>Nearest city, hospitals, schools</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="label">Why Igatpuri</p>
+    <h2 style="font-size:1.75rem;font-weight:700;margin-bottom:1.25rem;max-width:18em">Land that sits between two cities tends to hold its value better than land that sits beside one.</h2>
+    <p>Igatpuri takes the monsoon full on. It is the green belt Mumbai drives to, and it is close enough to Nashik to be a weekday place rather than only a weekend one. The Samruddhi Expressway changed the arithmetic: what used to be a long drive is now a short one.</p>
+    <p>Two kinds of buyer end up here. Investors who want land in a corridor that is still being built out, and families who want a place to put up a second home in a few years' time. The plots suit both, which is why the sizes run from 2,000 to 10,000 sq ft.</p>
+    <p>Come and walk it before you decide. Bring someone who knows land.</p>
+  </div>
+</section>
+
+<section class="enquire" id="enquire">
+  <div class="wrap">
+    <p class="label">Book a site visit</p>
+    <h2 style="font-size:1.75rem;font-weight:700;margin-bottom:0.75rem">Four questions, then we'll call you.</h2>
+    <p style="margin-bottom:2rem">Site visits run on Saturdays and Sundays. We will call to fix a time, not to read you a brochure.</p>
+    <form id="leadForm" novalidate>
+      <div class="field">
+        <span class="label" style="margin:0 0 0.125rem">Your budget for this plot</span>
+        <div class="choices" role="group" aria-label="Budget">
+          <input type="radio" name="budget" id="b1" value="&#8377;20&ndash;40 lakh"><label for="b1">&#8377;20&ndash;40 L</label>
+          <input type="radio" name="budget" id="b2" value="&#8377;40 lakh&ndash;1 crore"><label for="b2">&#8377;40 L&ndash;1 Cr</label>
+          <input type="radio" name="budget" id="b3" value="Above &#8377;1 crore"><label for="b3">Above &#8377;1 Cr</label>
+          <input type="radio" name="budget" id="b4" value="Below &#8377;20 lakh"><label for="b4">Below &#8377;20 L</label>
+        </div>
+      </div>
+      <div class="field">
+        <span class="label" style="margin:0 0 0.125rem">When are you looking to buy</span>
+        <div class="choices" role="group" aria-label="Timeline">
+          <input type="radio" name="timing" id="t1" value="Within 30 days"><label for="t1">Within 30 days</label>
+          <input type="radio" name="timing" id="t2" value="1&ndash;3 months"><label for="t2">1&ndash;3 months</label>
+          <input type="radio" name="timing" id="t3" value="3&ndash;6 months"><label for="t3">3&ndash;6 months</label>
+          <input type="radio" name="timing" id="t4" value="Just exploring"><label for="t4">Just exploring</label>
+        </div>
+      </div>
+      <div class="field">
+        <span class="label" style="margin:0 0 0.125rem">What is it for</span>
+        <div class="choices" role="group" aria-label="Purpose">
+          <input type="radio" name="purpose" id="p1" value="Investment"><label for="p1">Investment</label>
+          <input type="radio" name="purpose" id="p2" value="Weekend / second home"><label for="p2">Weekend home</label>
+          <input type="radio" name="purpose" id="p3" value="Both"><label for="p3">Both</label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" placeholder="Full name">
+      </div>
+      <div class="field">
+        <label for="phone">Mobile number</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="numeric" placeholder="10-digit mobile number">
+      </div>
+      <div class="actions">
+        <button type="submit" class="btn accent">Prepare my enquiry</button>
+      </div>
+      <p class="note" id="formErr" hidden></p>
+    </form>
+
+    <div id="result" hidden>
+      <h3>Your enquiry is ready</h3>
+      <p class="note" style="margin-bottom:0.875rem">Send it on WhatsApp, or copy it and message 73855 88253 yourself.</p>
+      <pre id="msgBox"></pre>
+      <div class="actions">
+        <a class="btn accent" id="waLink" href="#" target="_blank" rel="noopener">Send on WhatsApp</a>
+        <button type="button" class="btn ghost" id="copyBtn">Copy message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Cloud Heaven"><defs><mask id="mk2"><rect width="64" height="64" fill="#fff"/><rect x="-2" y="25.4" width="68" height="4" rx="2" fill="#000"/><rect x="-2" y="33.4" width="68" height="2.6" rx="1.3" fill="#000"/></mask></defs><g mask="url(#mk2)" fill="currentColor"><path d="M9 46 L18 29 L18 13 L38 13 L54 46 Z"/></g><rect x="6" y="49.6" width="52" height="2.4" rx="1.2" fill="currentColor"/></svg>
+          <span class="label" style="margin:0">Cloud Heaven</span>
+        </div>
+        <p style="margin:0">Igatpuri taluka, Nashik district, Maharashtra</p>
+      </div>
+      <div>
+        <p class="label" style="margin-bottom:0.375rem">Call or WhatsApp</p>
+        <p class="foot-num" style="margin:0">73855 88253</p>
+      </div>
+    </div>
+    <p class="fine">Plot areas and the &#8377;1,000 per sq ft rate are indicative and subject to the final agreement. Stamp duty, registration and development charges are extra. Verify all approvals, the 7/12 extract and the NA order independently before you pay anything. If the project is registered with MahaRERA, the registration number belongs on this page and in every advertisement.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var RATE = 1000, GUNTHA = 1089;
+  var range = document.getElementById('sizeRange');
+  var sizeOut = document.getElementById('sizeOut');
+  var gunthaOut = document.getElementById('gunthaOut');
+  var priceOut = document.getElementById('priceOut');
+
+  function groupIndian(n) {
+    var s = String(n), last3 = s.slice(-3), rest = s.slice(0, -3);
+    if (!rest) return last3;
+    return rest.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' + last3;
+  }
+  function inr(n) {
+    if (n >= 10000000) {
+      var cr = n / 10000000;
+      return '\u20B9' + (cr % 1 === 0 ? cr.toFixed(0) : cr.toFixed(2).replace(/0$/, '')) + ' Cr';
+    }
+    var l = n / 100000;
+    return '\u20B9' + (l % 1 === 0 ? l.toFixed(0) : l.toFixed(2).replace(/0$/, '')) + ' L';
+  }
+  function draw() {
+    var sqft = Number(range.value);
+    sizeOut.innerHTML = groupIndian(sqft) + ' <span>sq ft</span>';
+    gunthaOut.textContent = (sqft / GUNTHA).toFixed(2);
+    priceOut.textContent = inr(sqft * RATE);
+  }
+  range.addEventListener('input', draw);
+  draw();
+
+  var clips = document.querySelectorAll('.clip video');
+  Array.prototype.forEach.call(clips, function (v) {
+    v.addEventListener('play', function () {
+      Array.prototype.forEach.call(clips, function (o) { if (o !== v) { o.pause(); } });
+    });
+  });
+
+  var form = document.getElementById('leadForm');
+  var result = document.getElementById('result');
+  var msgBox = document.getElementById('msgBox');
+  var waLink = document.getElementById('waLink');
+  var err = document.getElementById('formErr');
+
+  function picked(name) {
+    var el = form.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : '';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var budget = picked('budget'), timing = picked('timing'), purpose = picked('purpose');
+
+    if (!name || !phone) {
+      err.textContent = 'Add your name and mobile number so we can call you back.';
+      err.hidden = false;
+      return;
+    }
+    err.hidden = true;
+
+    var sqft = Number(range.value);
+    var lines = [
+      'Cloud Heaven, Igatpuri \u2014 site visit enquiry',
+      '',
+      'Name: ' + name,
+      'Mobile: ' + phone,
+      'Plot size I am looking at: ' + groupIndian(sqft) + ' sq ft (' + inr(sqft * RATE) + ')'
+    ];
+    if (budget) lines.push('Budget: ' + budget);
+    if (timing) lines.push('Timeline: ' + timing);
+    if (purpose) lines.push('Purpose: ' + purpose);
+    lines.push('', 'Please call me to fix a site visit.');
+
+    var msg = lines.join('\n');
+    msgBox.textContent = msg;
+    waLink.href = 'https://wa.me/917385588253?text=' + encodeURIComponent(msg);
+    result.hidden = false;
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', function () {
+    var btn = this, text = msgBox.textContent;
+    function done() { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy message'; }, 1800); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, select);
+    } else { select(); }
+    function select() {
+      var r = document.createRange();
+      r.selectNodeContents(msgBox);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+      btn.textContent = 'Selected \u2014 copy it';
+      setTimeout(function () { btn.textContent = 'Copy message'; }, 2400);
+    }
+  });
+})();
+</script>
